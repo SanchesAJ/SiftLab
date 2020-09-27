@@ -1,7 +1,7 @@
-package com.shiftlab.yakobson.testTask.services;
+package com.shiftlab.yakobson.shop.services;
 
-import com.shiftlab.yakobson.testTask.models.Computer;
-import com.shiftlab.yakobson.testTask.repos.ComputerRepository;
+import com.shiftlab.yakobson.shop.models.Computer;
+import com.shiftlab.yakobson.shop.repos.ComputerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,8 +26,8 @@ public class ComputerService implements BaseService<Computer> {
     }
 
     @Override
-    public Computer add(Computer model) {
-        return computerRepository.saveAndFlush(model);
+    public void add(Computer model) {
+        computerRepository.saveAndFlush(model);
     }
 
     @Override

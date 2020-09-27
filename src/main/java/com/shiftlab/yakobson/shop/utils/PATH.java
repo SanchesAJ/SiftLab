@@ -1,4 +1,4 @@
-package com.shiftlab.yakobson.testTask.utils;
+package com.shiftlab.yakobson.shop.utils;
 
 public interface PATH {
     String API = "/api";

@@ -1,4 +1,4 @@
-package com.shiftlab.yakobson.testTask.models;
+package com.shiftlab.yakobson.shop.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Screen implements Product {
+public class Hdd implements Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,7 +17,26 @@ public class Screen implements Product {
     private String manufacturer;
     private Long unitsInStock;
 
-    private int diagonal;
+    private Long volume;
+
+    public Hdd() {
+
+    }
+
+    public Hdd(Long id,Long volume,String productName, double price, long serialNumber, String manufacturer, long unitsInStock) {
+        this.id = id;
+        this.volume = volume;
+        this.productName = productName;
+        this.price = price;
+        this.serialNumber = serialNumber;
+        this.manufacturer = manufacturer;
+        this.unitsInStock = unitsInStock;
+    }
+
+
+    public Long getVolume() {
+        return volume;
+    }
 
     @Override
     public Long getId() {

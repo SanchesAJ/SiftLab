@@ -1,4 +1,4 @@
-package com.shiftlab.yakobson.testTask;
+package com.shiftlab.yakobson.shop;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

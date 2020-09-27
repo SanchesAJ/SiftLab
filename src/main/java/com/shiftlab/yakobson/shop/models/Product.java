@@ -1,4 +1,4 @@
-package com.shiftlab.yakobson.testTask.models;
+package com.shiftlab.yakobson.shop.models;
 
 public interface Product {
     Long getId();

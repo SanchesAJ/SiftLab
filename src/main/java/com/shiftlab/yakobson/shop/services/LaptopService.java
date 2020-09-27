@@ -1,7 +1,7 @@
-package com.shiftlab.yakobson.testTask.services;
+package com.shiftlab.yakobson.shop.services;
 
-import com.shiftlab.yakobson.testTask.models.Laptop;
-import com.shiftlab.yakobson.testTask.repos.LaptopRepository;
+import com.shiftlab.yakobson.shop.models.Laptop;
+import com.shiftlab.yakobson.shop.repos.LaptopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,8 +26,8 @@ public class LaptopService implements BaseService<Laptop> {
     }
 
     @Override
-    public Laptop add(Laptop model) {
-        return laptopRepository.saveAndFlush(model);
+    public void add(Laptop model) {
+        laptopRepository.saveAndFlush(model);
     }
 
     @Override

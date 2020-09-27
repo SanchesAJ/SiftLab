@@ -1,7 +1,7 @@
-package com.shiftlab.yakobson.testTask.services;
+package com.shiftlab.yakobson.shop.services;
 
-import com.shiftlab.yakobson.testTask.models.Hdd;
-import com.shiftlab.yakobson.testTask.repos.HddRepository;
+import com.shiftlab.yakobson.shop.models.Hdd;
+import com.shiftlab.yakobson.shop.repos.HddRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,8 +26,8 @@ public class HddService implements BaseService<Hdd> {
     }
 
     @Override
-    public Hdd add(Hdd model) {
-        return hddRepository.saveAndFlush(model);
+    public void add(Hdd model) {
+        hddRepository.saveAndFlush(model);
     }
 
     @Override

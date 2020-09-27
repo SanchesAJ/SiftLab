@@ -1,7 +1,5 @@
-package com.shiftlab.yakobson.testTask.models;
+package com.shiftlab.yakobson.shop.models;
 
-
-import com.shiftlab.yakobson.testTask.utils.LaptopScreenTypes;
 
 import javax.persistence.*;
 

@@ -1,7 +1,7 @@
-package com.shiftlab.yakobson.testTask.services;
+package com.shiftlab.yakobson.shop.services;
 
-import com.shiftlab.yakobson.testTask.models.Screen;
-import com.shiftlab.yakobson.testTask.repos.ScreenRepository;
+import com.shiftlab.yakobson.shop.models.Screen;
+import com.shiftlab.yakobson.shop.repos.ScreenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,8 +26,8 @@ public class ScreenService implements BaseService<Screen> {
     }
 
     @Override
-    public Screen add(Screen model) {
-        return ScreenRepository.saveAndFlush(model);
+    public void add(Screen model) {
+        ScreenRepository.saveAndFlush(model);
     }
 
     @Override

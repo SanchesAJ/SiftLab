@@ -1,4 +1,4 @@
-package com.shiftlab.yakobson.testTask.models;
+package com.shiftlab.yakobson.shop.models;
 
 
 
@@ -21,22 +21,17 @@ public class Computer implements Product {
 
     private int computerType;
 
-    public void editComputer(String productName, double price, long serialNumber, String manufacturer, long unitsInStock, int computerType){
+
+
+
+    public Computer(Long id, String productName, double price, long serialNumber, String manufacturer, long unitsInStock, int computerType) {
+        this.id= id;
         this.productName = productName;
         this.price = price;
         this.serialNumber = serialNumber;
         this.manufacturer = manufacturer;
         this.unitsInStock = unitsInStock;
-        this.computerType = computerType;
-    }
 
-
-    public Computer(String productName, double price, long serialNumber, String manufacturer, long unitsInStock, int computerType) {
-        this.productName = productName;
-        this.price = price;
-        this.serialNumber = serialNumber;
-        this.manufacturer = manufacturer;
-        this.unitsInStock = unitsInStock;
         this.computerType = computerType;
     }
 
