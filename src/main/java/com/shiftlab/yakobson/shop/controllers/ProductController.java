@@ -1,4 +1,4 @@
-package com.shiftlab.yakobson.shop.controller;
+package com.shiftlab.yakobson.shop.controllers;
 
 
 
@@ -34,7 +34,8 @@ public class ProductController {
 
     //Помимо json-а с обьектом от фронтенда ожидается тип товара в path
     //Контроллер переключится с одного товара на другой.
-    BaseService switchProductType(String name){
+    //Возможно такая схема будет проще в смысле добавления новых типов товара
+    BaseService getService(String name){
         switch (name){
             case "hdd":{
                 current = Hdd.class;
@@ -59,7 +60,7 @@ public class ProductController {
 
     @RequestMapping(method = RequestMethod.POST, value = PATH.ADD+"{product}")
     ResponseEntity<Product> addProduct(@PathVariable(value="product")String productType, @RequestBody String json) {
-        BaseService service = switchProductType(productType);
+        var service = getService(productType);
         Screen model = gson.fromJson(json, current);
         service.add(model);
         return ResponseEntity.ok(model);
@@ -68,7 +69,7 @@ public class ProductController {
 
     @RequestMapping(method = RequestMethod.PATCH, value = PATH.UPDATE+"{product}")
     ResponseEntity<Product> editProduct( @PathVariable(value="product")String productType, @RequestBody String json) {
-        BaseService service = switchProductType(productType);
+        var service = getService(productType);
         Screen model = gson.fromJson(json, current);
         service.update(model);
         return ResponseEntity.ok(model);
@@ -76,13 +77,13 @@ public class ProductController {
 
     @RequestMapping(method = RequestMethod.GET, value = PATH.GETPRODUCT+"{product}")
     ResponseEntity<Object> getProduct(@PathVariable(value="product")String productType,@RequestBody Long modelId) {
-        BaseService service = switchProductType(productType);
+        var service = getService(productType);
         return ResponseEntity.ok(service.getById(modelId));
     }
 
     @RequestMapping(method = RequestMethod.GET, value = PATH.GETALL+"{product}")
     ResponseEntity<List<Object>> getAllProductsByType(@PathVariable(value="product")String productType) {
-        BaseService service = switchProductType(productType);
+        var service = getService(productType);
         return ResponseEntity.ok(service.findAll());
     }
 
